@@ -1,9 +1,7 @@
 awscli
 ======
 
-[![Build Status](https://travis-ci.org/kbrebanov/ansible-awscli.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-awscli)
-
-Installs awscli
+Installs awscli, and creates a credentials file so that commands work
 
 Requirements
 ------------
@@ -13,9 +11,13 @@ This role requires Ansible 1.4 or higher.
 Role Variables
 --------------
 
-| Name           | Default | Description                         |
-|----------------|---------|-------------------------------------|
-| awscli_version | 1.10.4  | Default installed version of awscli |
+| Name                  | Default | Description                                     |
+|-----------------------|---------|-------------------------------------------------|
+| awscli_version        | 1.10.4  | Default installed version of awscli             |
+| awscli_user 	        | ubuntu  | Default user for credentials to be stored under |
+| aws_access_key_id     | none    | AWS key to use                                  |
+| aws_secret_access_key | none    | AWS secret to use                               |
+
 
 Dependencies
 ------------
@@ -29,7 +31,7 @@ Install awscli
 ```
 - hosts: all
   roles:
-    - kbrebanov.awscli
+    - ctoaas.awscli
 ```
 
 License
@@ -41,3 +43,4 @@ Author Information
 ------------------
 
 Kevin Brebanov
+Craig Edmundss
