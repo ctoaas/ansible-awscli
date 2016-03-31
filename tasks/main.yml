@@ -23,11 +23,11 @@
     path: "~/.aws"
     state: directory
   become: yes
-  become_user: {{ awscli_user }}
+  become_user: "{{ awscli_user }}"
 
 - name: Create credentials file
   template: src="credentials.j2"
             dest="~/.aws/credentials"
   with_dict: wordpress_sites
   become: yes
-  become_user: {{ awscli_user }}
+  become_user: "{{ awscli_user }}"
